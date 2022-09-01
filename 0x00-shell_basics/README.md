@@ -1,1 +1,1 @@
-script that prints the absolute path name of the current working directory
+Displaying current directory contents in a long format
