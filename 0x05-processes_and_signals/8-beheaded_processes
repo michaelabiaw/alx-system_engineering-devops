@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
-# Kills the process 7-highlander.
-pkill -f -SIGKILL 7-highlander
+# Kills the process 7-highlander
+
+#Get the process id of 7-highlander
+HIGHLANDER_PID=$(pgrep -f 7-highlander)
+
+#Kill the process
+kill -9 $HIGHLANDER_PID
