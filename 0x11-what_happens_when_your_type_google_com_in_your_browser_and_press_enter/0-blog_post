@@ -1,73 +1,21 @@
-# What happens when you type google.com in your browser and press Enter
+The internet has become an integral part of our lives, and browsing the web has become second nature to most of us. But have you ever wondered what happens behind the scenes when you type "https://www.google.com" in your browser and press Enter? Let's take a closer look at the journey your request takes before you see the Google search page.
 
-Anytime we want to browse the internet, we must do so through a Web Browser. 
-Let’s say you want to visit https://www.google.com, you will need to type it 
-in the web address bar correctly and hit Enter on your keyboard or keypad for
-action to take place. So, what then happens before the web page is displayed 
-in your browser? Let’s walk through the processes briefly:
-After typing the web address (domain name), https://www.google.com, and 
-hitting enter, the various parts of the web infrastructure are utilized.
+DNS Request: When you type "https://www.google.com" in your browser, the first step is for your computer to resolve the domain name "www.google.com" to an IP address. This process is known as a DNS (Domain Name System) request. Your computer sends a request to a DNS server to resolve the domain name into an IP address, which is a unique numerical identifier assigned to each website on the internet.
 
-### Domain Name System/ Domain Name System Server (DNS/DNS Server): 
-On hitting enter the web browser sends a query to the DNS server. The DNS
-server holds a register of all public domain names and their corresponding 
-Internet protocol (IP) addresses. The Recursive DNS server tries to resolve 
-this domain name (google.com in our case) into the corresponding IP address. 
-If it doesn’t have the necessary information, it then forwards the query to 
-the Authoritative DNS Server which then resolves the domain name to the 
-corresponding IP address. In cases where the website had already been visited
-via the same browser, the Caching DNS Server holds the local copy (a temporary 
-database on your computer that keeps records of the recent visits to websites)
-of recent DNS lookups. This local copy speeds up things.
-The essence of the DNS is to keep out the need to memorize IP addresses, by 
-providing human-readable domain names. However, typing the IP address of any 
-website works as well, that’s if you can remember it exactly as it is. Hard right?
+TCP/IP: Once the DNS server resolves the domain name to an IP address, your computer establishes a TCP/IP (Transmission Control Protocol/Internet Protocol) connection with the web server associated with that IP address. TCP/IP is the set of protocols used for transmitting data over the internet.
 
-### Transmission Control Protocol/Internet Protocol (TCP/IP):  
-After the IP addressof the domain name (google.com in this case) is obtained from
-the DNS, the IP address is used to establish the TCP/IP connection. The TCP/IP 
-are standardized communication protocols of devices over the internet. This
-allows for seamless communication and data sharing across networks between
-devices. The TCP works by managing data transfer in small packets of data until
-the destination is reached on the network. The IP handles routing to the specific
-IP address provided by each device (source and destination device) on the 
-network until the data packets are successfully delivered.
+Firewall: Before your request reaches the web server, it may pass through a firewall. A firewall acts as a barrier to protect the server from unauthorized access and potential security threats. It filters incoming and outgoing network traffic based on a set of predefined rules to ensure the security of the server.
 
-### Firewalls:
-When the connection is established on the network, the firewall 
-stands guard, monitoring the incoming and outgoing traffic. This is to ensure
-that only traffic that is authorized can have passage. This shields your computer
-and/or network from intrusion, malicious or unnecessary traffic, unauthorized 
-remote access, and unwanted/indecent content.
+HTTPS/SSL: If you typed "https://www.google.com" in your browser, you are using the HTTPS (Hypertext Transfer Protocol Secure) protocol, which encrypts the data transmitted between your computer and the web server. This encryption ensures that the data exchanged between your computer and the web server is secure and cannot be intercepted or tampered with by malicious actors. HTTPS uses SSL (Secure Socket Layer) or TLS (Transport Layer Security) protocols for encryption.
 
-### Hyper-Text Transfer Protocol/ Secure Socket Layer (HTTPS/SSL): 
-After the connection is established, an HTTPS/SSL request is sent by your browser
-to the web server. The web server in return sends the SSL (recently called
-Transport Layer Security – TLS) certificate to your browser, which verifies
-that google.com is safe and legitimate. The SSL certificate is then used by
-your browser to keep the session encrypted and sends it to the Google server. 
-Load Balancers may be used to distribute the load in the case of multiple
-servers or clusters. Google of course has multiple servers in place to handle 
-the millions of requests it gets, one of which is yours. The load balancer 
-typically will forward your request to a suitable web server at a time. This
-is technique is used to provide speedy page loading, avoid overloading any 
-servers, and also, to reduce the downtime of servers.  Load balancers use 
-various algorithms to balance server load.
+Load-balancer: Google.com is a high-traffic website, and to handle the load, it may use load-balancers. Load balancers distribute incoming network traffic across multiple servers to ensure efficient handling of requests and prevent overloading of a single server. This helps in maintaining the availability and reliability of the website.
 
-### Web Servers: 
-The web server can be a physical device or a software
-application responsible for handling HTTPS requests from clients 
-(usually web browsers). The requests are processed and the results
-are returned in the form of a web page/ The web page may contain files:
-images or stylesheets. These are both static web content that web servers
-usually handle. This is not to say web servers cannot handle dynamic requests.
-Dynamic requests refer to the web pages that are engineered by scripts
-placed on the server. Examples of web servers include Apache, Nginx, 
-Microsoft IIS, and many others. The Application Server is ideal for hosting 
-scripts that run to make up dynamic pages based on requests. Google is no 
-exception in this, they have application servers too. This interaction also 
-includes a Database in which the web server and application server fetch data.
-The scripts on the application server operate on the data from the database so 
-as to feed the web server which in turn returns the result to the browser in
-the form of a web page.
-The overall process is termed the HTTPS request-response cycle.
+Web Server: Once your request reaches the web server, it processes the request and generates a response. The web server is responsible for serving web pages and other web content to clients, such as your browser, over the internet. In the case of Google.com, the web server may generate the search results page in response to your query.
+
+Application Server: Some websites, like Google.com, may use application servers to handle more complex tasks, such as processing search queries, storing user preferences, and managing user sessions. The application server works in conjunction with the web server to handle these tasks and generate dynamic content for the web pages.
+
+Database: Websites often store data, such as user profiles, search results, and other information, in databases. The application server communicates with the database to retrieve and store data as needed. In the case of Google.com, the search results are likely retrieved from a vast database containing indexed web pages.
+
+Once the web server and application server have processed your request and generated the appropriate response, it is sent back to your computer through the same series of steps in reverse. The response may include the HTML, CSS, and JavaScript files that make up the web page, which are then rendered by your browser to display the Google search page on your screen.
+
+In conclusion, when you type "https://www.google.com" in your browser and press Enter, a series of complex steps occur behind the scenes involving DNS requests, TCP/IP connections, firewalls, HTTPS/SSL encryption, load-balancers, web servers, application servers, and databases. 
