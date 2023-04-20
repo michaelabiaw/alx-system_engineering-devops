@@ -1,26 +1,4 @@
-
-
-#!/bin/bash
-
-# Check if the password argument is provided
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <mysql_password>"
-    exit 1
-fi
-
-# Set the date format for the backup file name
-backup_date=$(date +'%d-%m-%Y')
-
-# Set the MySQL root password
-mysql_password="$1"
-
-# Generate MySQL dump
-mysqldump -u root -p"${mysql_password}" --all-databases > backup.sql
-
-# Compress the MySQL dump file
-tar -czf "${backup_date}.tar.gz" backup.sql
-
-# Remove the original MySQL dump file
-rm backup.sql
-
-echo "MySQL backup created successfully: ${backup_date}.tar.gz"
+#!/usr/bin/env bash
+# A Bash scrit to archive all MySQL DATABASE with the help of mysqldump and tar.
+mysqldump -uroot -p"$1" --all-databases > backup.sql
+tar -cvzf "$(date +%d-%m-%Y)".tar.gz backup.sql
