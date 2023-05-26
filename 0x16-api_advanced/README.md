@@ -1,6 +1,7 @@
 ![API Advanced](https://appmaster.io/blog/apis-for-beginners-how-to-use-an-api-a-complete-guide)
 
 Requirements
+
 General
 
 Allowed editors: vi, vim, emacs
